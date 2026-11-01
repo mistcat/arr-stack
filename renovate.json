@@ -1,46 +1,36 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:recommended"],
-  "timezone": "Europe/London",
-  "schedule": ["before 9am on Monday"],
-  "labels": ["dependencies"],
+  "extends": [
+    "config:recommended"
+  ],
+  "timezone": "America/Denver",
+  "schedule": [
+    "* * * * 1"
+  ],
+  "labels": [
+    "dependencies"
+  ],
+  "prHourlyLimit": 0,
+  "prConcurrentLimit": 0,
+  "automerge": false,
+  "automergeType": "branch",
+  "ignoreTests": true,
   "packageRules": [
     {
-      "description": "Group all LinuxServer.io image updates",
-      "matchDatasources": ["docker"],
-      "matchPackagePatterns": ["^lscr\\.io/linuxserver/"],
-      "groupName": "LinuxServer.io images"
+      "description": "Unattended updates. Flip automerge to true after rollback is proven (plan Task 11).",
+      "matchDatasources": [
+        "docker"
+      ],
+      "automerge": false
     },
     {
-      "description": "Group infrastructure images (Gluetun, Traefik, Cloudflared, Pi-hole)",
-      "matchDatasources": ["docker"],
+      "description": "Guided systems: PRs only, never automerge. Keep this rule last.",
       "matchPackageNames": [
         "qmcgaw/gluetun",
-        "traefik",
-        "cloudflare/cloudflared",
-        "pihole/pihole"
+        "pihole/pihole",
+        "klutchell/dnscrypt-proxy"
       ],
-      "groupName": "Infrastructure images"
-    },
-    {
-      "description": "Group monitoring/utility images",
-      "matchDatasources": ["docker"],
-      "matchPackageNames": [
-        "henrygd/beszel",
-        "henrygd/beszel-agent",
-        "louislam/uptime-kuma",
-        "crazymax/diun",
-        "qmcgaw/deunhealth",
-        "mkoestler/duc-service"
-      ],
-      "groupName": "Utility images"
-    },
-    {
-      "description": "Auto-merge patch updates for stable media services",
-      "matchDatasources": ["docker"],
-      "matchPackagePatterns": ["^lscr\\.io/linuxserver/"],
-      "matchUpdateTypes": ["patch"],
-      "automerge": true
+      "automerge": false
     }
   ]
 }
