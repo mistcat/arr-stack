@@ -32,5 +32,12 @@
       ],
       "automerge": false
     }
+  ],
+  "ignorePaths": [
+    "docker-compose.cloudflared.yml",
+    "docker-compose.tailscale.yml",
+    "docker-compose.traefik.yml",
+    "docker-compose.utilities.yml",
+    "tests/**"
   ]
 }
