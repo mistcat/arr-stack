@@ -221,7 +221,7 @@ services:
   # Access: beszel.lan | NAS_IP:8090 (LAN-only, use WireGuard for remote)
   # ═══════════════════════════════════════════════════════════════════════════
   beszel:
-    image: henrygd/beszel:0.19
+    image: henrygd/beszel:0.21
     container_name: beszel
     <<: *default-security
     cap_add:
