@@ -322,7 +322,7 @@ services:
   # Dry run first: docker compose -f docker-compose.utilities.yml run --rm -e DRY_RUN=true configarr
   # ═══════════════════════════════════════════════════════════════════════════
   configarr:
-    image: ghcr.io/raydak-labs/configarr:1.30.2
+    image: ghcr.io/raydak-labs/configarr:1.38.0
     container_name: configarr
     <<: *default-security
     cap_add:
