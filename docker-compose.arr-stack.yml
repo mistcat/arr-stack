@@ -162,7 +162,9 @@ services:
       - WIREGUARD_ADDRESSES=${WIREGUARD_ADDRESSES}
       - SERVER_COUNTRIES=${VPN_COUNTRIES}
       - TZ=${TZ}
-      - DNS_ADDRESS=172.20.0.5
+      # 2026-10-12: gluetun resolves via its own DoT resolver INSIDE the tunnel
+      # (was 172.20.0.5 = Pi-hole, which leaked lookups out the home IP).
+      - DNS_ADDRESS=127.0.0.1
       # Health check targets, deliberately IP:port and not hostnames.
       #
       # DNS_ADDRESS above disables gluetun's own resolver (it says so at every

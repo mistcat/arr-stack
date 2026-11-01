@@ -112,3 +112,10 @@ docs/*-BASELINE*.md
 tests/e2e/screenshots/*.png
 test-results/
 .venv/
+
+# Local backups and env variants never go to this public repo
+.env*
+!.env.example
+!.env.e2e.example
+!tests/fixtures/.env.test
+*.bak*
