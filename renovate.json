@@ -39,5 +39,8 @@
     "docker-compose.traefik.yml",
     "docker-compose.utilities.yml",
     "tests/**"
+  ],
+  "enabledManagers": [
+    "docker-compose"
   ]
 }
