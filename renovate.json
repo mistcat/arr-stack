@@ -5,7 +5,7 @@
   ],
   "timezone": "America/Denver",
   "schedule": [
-    "* * * * 1"
+    "at any time"
   ],
   "labels": [
     "dependencies"
