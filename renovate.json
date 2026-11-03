@@ -24,6 +24,13 @@
       "automerge": false
     },
     {
+      "description": "20.04.1 and similar are old Ubuntu-based tags, not newer qBittorrent releases.",
+      "matchPackageNames": [
+        "lscr.io/linuxserver/qbittorrent"
+      ],
+      "allowedVersions": "<20"
+    },
+    {
       "description": "Guided systems: PRs only, never automerge. Keep this rule last.",
       "matchPackageNames": [
         "qmcgaw/gluetun",
