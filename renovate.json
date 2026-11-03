@@ -31,6 +31,13 @@
       "allowedVersions": "<20"
     },
     {
+      "description": "Majors wait as checkboxes on the Dependency Dashboard; tick one to get its PR. Closing a PR would ignore that major for good.",
+      "matchUpdateTypes": [
+        "major"
+      ],
+      "dependencyDashboardApproval": true
+    },
+    {
       "description": "Guided systems: PRs only, never automerge. Keep this rule last.",
       "matchPackageNames": [
         "qmcgaw/gluetun",
